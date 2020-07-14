@@ -1,0 +1,19 @@
+# Use this file to define licenses for artefacts that either do not
+# define a license or artefacts that define a wrong license
+#
+# (entries are sorted alphabetically)
+#
+bouncycastle--bcmail-jdk14--138=MIT
+bouncycastle--bcprov-jdk14--138=MIT
+ch.qos.logback--logback-classic--1.2.3=LGPL-2.1
+ch.qos.logback--logback-core--1.2.3=LGPL-2.1
+com.lowagie--itext--2.1.7=MPL-1.1
+javax.jms--jms--1.1=CDDL-1.1
+org.bouncycastle--bcmail-jdk14--1.38=MIT
+org.bouncycastle--bcpkix-jdk15on--1.53=MIT
+org.bouncycastle--bcpkix-jdk15on--1.64=MIT
+org.bouncycastle--bcprov-ext-jdk15on--1.60=MIT
+org.bouncycastle--bcprov-jdk14--1.38=MIT
+org.bouncycastle--bcprov-jdk15on--1.62=MIT
+org.bouncycastle--bcprov-jdk15on--1.64=MIT
+org.bouncycastle--bctsp-jdk14--1.38=MIT
