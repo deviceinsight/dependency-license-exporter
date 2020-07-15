@@ -5,6 +5,7 @@
   <servers>
     <server>
       <id>github-deploy</id>
+      <username>${env.GITHUB_DEPLOY_NAME}</username>
       <password>${env.GITHUB_DEPLOY_TOKEN}</password>
     </server>
   </servers>
