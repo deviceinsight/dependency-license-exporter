@@ -23,4 +23,4 @@ jobs:
   - stage: deploy
     #if: tag IS present OR branch = master
     script:
-    - mvnw $MAVEN_CLI_OPTS clean deploy
+    - mvn $MAVEN_CLI_OPTS clean deploy
