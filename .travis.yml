@@ -1,0 +1,26 @@
+dist: bionic
+
+language: java
+
+jdk:
+  - oraclejdk11
+
+cache:
+  directories:
+    - $HOME/.m2
+
+env:
+  # https://gitlab.com/gitlab-org/gitlab-foss/-/blob/master/lib/gitlab/ci/templates/Maven.gitlab-ci.yml
+  - MAVEN_OPTS="-Dmaven.repo.local=${TRAVIS_BUILD_DIR}/.m2 -Dmaven.repo.local=$TRAVIS_BUILD_DIR/.m2/repository -Dorg.slf4j.simpleLogger.log.org.apache.maven.cli.transfer.Slf4jMavenTransferListener=WARN -Dorg.slf4j.simpleLogger.showDateTime=true"
+  - MAVEN_CLI_OPTS="--batch-mode --errors --fail-at-end --show-version"
+
+
+stages:
+ - name: deploy
+
+jobs:
+  include:
+  - stage: deploy
+    #if: tag IS present OR branch = master
+    script:
+    - mvnw $MAVEN_CLI_OPTS clean deploy
