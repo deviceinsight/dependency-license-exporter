@@ -1,6 +1,6 @@
 # dependency-license-exporter
 
-this repo is a small maven project which generates a `jar` to place config files on the classpath
+This repo is a small maven project which generates a `jar` to place config files on the classpath
 when generating dependency license information using [License Maven Plugin](https://www.mojohaus.org/license-maven-plugin/).
 These config files allows for a generated license list that matches the company requirements.
 
@@ -70,9 +70,9 @@ now run the following command and a file `dependencies-license.adoc` should be g
 mvn clean generate-resources -Pcreate-license-list
 ```
 
-## Analysing the output
+## Analysing the Output
 
-### Overriding found licenses
+### Overriding Found Licenses
 
 If [License Maven Plugin](https://www.mojohaus.org/license-maven-plugin/) determines a license for a dependency but the
 license is incorrect or not specific enough, we can override it:
@@ -80,7 +80,7 @@ license is incorrect or not specific enough, we can override it:
 In this repo we maintain file with license overrides (`src/main/resources/override-licenses.txt`) where license information can be added.
 this file is loaded via `overrideUrl` configuration in the profile above.
 
-#### file format
+#### File Format
 
 ```text
 ${mavenGroupId}--${mavenArtifactId}--${version}=${license}
@@ -109,7 +109,7 @@ Dependencies might declare the name of the same license in different ways e.g. (
 to consolidate the used licenses different names can be merged into one using the file `src/main/resources/license-merges.txt`
 which is loaded via `licenseMergesUrl` configuration in the profile above.
 
-#### file format
+#### File Format
 
 ```text
 ${spdx identifier}|${license spelling A}|${license spelling B}|${license spelling C}
