@@ -14,7 +14,7 @@
 		<repository>
 		  <id>github-deploy</id>
 		  <name>DEVICEINSIGHT Maven package repository</name>
-		  <url>https://maven.pkg.github.com/deviceinsigh/maven</url>
+		  <url>https://maven.pkg.github.com/deviceinsight/maven</url>
 		</repository>
 	 </distributionManagement>	 
 </project>
