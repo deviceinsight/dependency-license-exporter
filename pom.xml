@@ -8,7 +8,7 @@
 	<artifactId>dependency-license-exporter</artifactId>
 	<version>1.0.0-SNAPSHOT</version>
 	<packaging>jar</packaging>
-	
+
 	<name>Dependency License Exporter</name>
 	<description>Generates a license list of all dependencies used in the project.</description>
 	<url>https://github.com/deviceinsight/dependency-license-exporter</url>
@@ -17,6 +17,7 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<maven.compiler.source>1.8</maven.compiler.source>
 		<maven.compiler.target>1.8</maven.compiler.target>
+		<gitflow-maven-plugin.version>1.14.0</gitflow-maven-plugin.version>
 		<maven-source-plugin.version>3.0.1</maven-source-plugin.version>
 		<maven-javadoc-plugin.version>3.1.0</maven-javadoc-plugin.version>
 		<nexus-staging-maven-plugin.version>1.6.8</nexus-staging-maven-plugin.version>
@@ -54,6 +55,21 @@
 		<tag>HEAD</tag>
 		<url>https://github.com/deviceinsight/dependency-license-exporter.git</url>
 	</scm>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>com.amashchenko.maven.plugin</groupId>
+				<artifactId>gitflow-maven-plugin</artifactId>
+				<version>${gitflow-maven-plugin.version}</version>
+				<configuration>
+					<pushRemote>false</pushRemote>
+					<versionDigitToIncrement>1</versionDigitToIncrement>
+					<useSnapshotInHotfix>true</useSnapshotInHotfix>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
 
 	<profiles>
 		<profile>
