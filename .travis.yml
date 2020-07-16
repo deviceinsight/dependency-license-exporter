@@ -1,0 +1,19 @@
+dist: bionic
+
+language: java
+
+jdk:
+  - openjdk8
+
+cache:
+  directories:
+    - $HOME/.m2
+
+env:
+  - MAVEN_OPTS="-Dorg.slf4j.simpleLogger.log.org.apache.maven.cli.transfer.Slf4jMavenTransferListener=WARN -Dorg.slf4j.simpleLogger.showDateTime=true"
+  - MAVEN_CLI_OPTS="--batch-mode --errors --fail-at-end --show-version"
+
+install: "/bin/true"
+
+script:
+  - mvn $MAVEN_CLI_OPTS clean verify
