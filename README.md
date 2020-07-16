@@ -126,3 +126,31 @@ to the license description.
 
 There are two different goals: `add-third-party` and `aggregate-add-third-party`. With `add-third-party` the dependency file is created for each module.
 If only one dependency file in a multi module project should be generated, the `aggregate-add-third-party` goal can be used.
+
+## Releasing
+
+Creating a new release involves the following steps:
+
+* `mvn gitflow:release-start gitflow:release-finish`
+* `git push origin master`
+* `git push --tags`
+* `git push origin develop`
+
+In order to deploy the release to Maven Central, you need to create an account at https://issues.sonatype.org and
+configure your account in `~/.m2/settings.xml`:
+
+``` xml
+<settings>
+  <servers>
+    <server>
+      <id>ossrh</id>
+      <username>your-jira-id</username>
+      <password>your-jira-pwd</password>
+    </server>
+  </servers>
+</settings>
+```
+
+The account also needs access to the project on Maven Central. This can be requested by another project member.
+
+Then check out the release you want to deploy (`git checkout x.y.z`) and run `mvn deploy -Prelease`.
