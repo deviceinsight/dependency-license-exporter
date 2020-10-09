@@ -38,6 +38,7 @@ Add a maven profile to your `pom.xml`:
                             <useMissingFile>true</useMissingFile>
                             <licenseMergesUrl>classpath:license-merges.txt</licenseMergesUrl>
                             <overrideUrl>classpath:override-licenses.txt</overrideUrl>
+							<includedLicenses>classpath:allowed-licenses.txt</includedLicenses>
                             <useMissingFile>false</useMissingFile>
                             <excludeTransitiveDependencies>true</excludeTransitiveDependencies>
                             <includeTransitiveDependencies>false</includeTransitiveDependencies>
@@ -45,12 +46,13 @@ Add a maven profile to your `pom.xml`:
                             <excludedGroups>^com\.deviceinsight|^net\.centersight</excludedGroups>
                             <thirdPartyFilename>dependencies-license.adoc</thirdPartyFilename>
                             <fileTemplate>/com/deviceinsight/license/exporter/adoc-template.ftl</fileTemplate>
-							<outputDirectory>${project.basedir}</outputDirectory>
+                            <outputDirectory>${project.basedir}</outputDirectory>
                         </configuration>
                         <executions>
                             <execution>
                                 <id>create-license-list</id>
                                 <goals>
+                                    <!-- choose one of these goals for your project -->
                                     <goal>add-third-party</goal>
                                     <goal>aggregate-add-third-party</goal>
                                 </goals>
@@ -65,12 +67,31 @@ Add a maven profile to your `pom.xml`:
 </project>
 ```
 
-now run the following command and a file `dependencies-license.adoc` should be generated in the root folder of the project:
+Now run the following command and a file `dependencies-license.adoc` should be generated in the root folder of the project:
 ```bash
 mvn clean generate-resources -Pcreate-license-list
 ```
+Or invoke the goal directly:
+```bash
+mvn license:add-third-party
+mvn license:aggregate-add-third-party
+```
 
-## Analysing the Output
+## Configuration Guide
+
+
+### Overriding Default Configuration Files
+
+Each project can also override the files included in this plugin with their own, e.g.:
+```xml
+    <configuration>
+        <!-- Use custom allowed licenses list -->
+        <includedLicenses>file:/${maven.multiModuleProjectDirectory}/dependencies-license-allowed.txt</includedLicenses>
+        <!-- Use custom template -->
+        <fileTemplate>${project.basedir}/dependencies-license-template.ftl</fileTemplate>
+        <!-- ... -->
+    </configuration>
+```
 
 ### Overriding Found Licenses
 
@@ -118,14 +139,38 @@ ${spdx identifier}|${license spelling A}|${license spelling B}|${license spellin
 In order to have a consistent naming of the licenses the first entry in a row should be the `spdx identifier` of the
 license (see: https://spdx.org/licenses/).
 
-when a new `spdx identifier` is added make sure to add it to the
-`src/main/resources/com/deviceinsight/license/exporter/adoc-template.ftl` as well. This way we can directly generate a link
-to the license description.
+Whenever a new `spdx identifier` is added, make sure to add it to the output templates as well, e.g.
+`src/main/resources/com/deviceinsight/license/exporter/adoc-template.ftl`.
+This way we can directly generate a link to the license description.
 
 ### Multi module project
 
-There are two different goals: `add-third-party` and `aggregate-add-third-party`. With `add-third-party` the dependency file is created for each module.
+There are two different goals: `add-third-party` and `aggregate-add-third-party`.
+With `add-third-party` the dependency file is created for each module.
 If only one dependency file in a multi module project should be generated, the `aggregate-add-third-party` goal can be used.
+
+### Allowed Licenses
+Projects can be configured to fail at build time when containing a library whose license is not allowed:
+
+```xml
+    <configuration>
+        <failOnBlacklist>true</failOnBlacklist>
+        <includedLicenses>classpath:allowed-licenses.txt</includedLicenses>
+    </configuration>
+```
+
+### Built-in Templates for Generated License List
+This plugin provides two built-in asciidoc templates for the generated license files.
+`adoc-template.ftl` lists the libraries with groupId:artifactId, version, URL and the SPDX link to the license.
+`adoc-template-four-columns.ftl` lists the libraries with human readable name - linked to the library's homepage, 
+groupId:artifactId, version,  and the SPDX link to the license.
+
+```xml
+    <configuration>
+        <fileTemplate>/com/deviceinsight/license/exporter/adoc-template-four-columns.ftl</fileTemplate>
+        <!-- ... -->
+    </configuration>
+```
 
 ## Releasing
 
@@ -139,7 +184,7 @@ Creating a new release involves the following steps:
 In order to deploy the release to Maven Central, you need to create an account at https://issues.sonatype.org and
 configure your account in `~/.m2/settings.xml`:
 
-``` xml
+```xml
 <settings>
   <servers>
     <server>
