@@ -29,8 +29,9 @@ CDDL-1.1
 EPL-1.0
 EPL-2.0
 GPL-2.0-with-classpath-exception
-LGPL
 LGPL-2.1
+LGPL-3.0-only
+LGPL-3.0-or-later
 MPL-1.0
 MPL-1.1
 MPL-2.0

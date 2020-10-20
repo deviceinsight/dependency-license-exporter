@@ -21,7 +21,7 @@ GPL-2.0|GPL 2.0|GNU General Public License, v2.0|GNU GENERAL PUBLIC LICENSE Vers
 GPL-3.0|GNU Public License, Version 3.0
 LGPL-2.1+|GNU Library General Public License v2.1 or later
 LGPL-2.1|LGPL 2.1|GNU LESSER GENERAL PUBLIC LICENSE, Version 2.1|GNU Lesser General Public License, version 2.1|GNU Lesser General Public License, Version 2.1|The GNU Lesser General Public License, Version 2.1|GNU Lesser General Public License version 2.1 (LGPLv2.1)
-LGPL-3.0|GNU Lessor/Library Public License, Version 3.0
+LGPL-3.0-only|GNU Lessor/Library Public License, Version 3.0
 LGPL|GNU Lesser General Public License|GNU LESSER GENERAL PUBLIC LICENSE|GNU Lesser Public License|GNU Lesser General Public Licence
 MIT|MIT License|The MIT License (MIT)|The MIT License|MIT license
 MPL-1.1|Mozilla Public License version 1.1|MPL 1.1
