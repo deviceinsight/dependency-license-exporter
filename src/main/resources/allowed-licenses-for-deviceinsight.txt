@@ -1,0 +1,37 @@
+# http://deviceinsight.pages.device-insight.de/project-development-guidelines/open-source-dependencies/
+#
+# Allowed list
+#
+# The following licenses have no copyleft restrictions thus allowing us to use and modify the libraries without disclosing sources.
+# Therefore they are compatible to our business model and any library published under one of these can be used within product and project:
+#
+0BSD
+Apache-2.0
+BSD-2-Clause
+BSD-3-Clause
+CC-BY-4.0
+EDL-1.0
+MIT
+Unlicense
+#
+# Restricted licenses
+#
+# The following licenses have a weak copyleft restriction. Therefore we only need to disclose our source code, when we:
+# - modify the library’s source code
+# - copy the library’s source code into our application code
+# - statically link the library (some libraries allow this)
+#
+# You can use a library licensed under one of the following licenses, as long as you follow the above rules.
+# An approved approach is using the library as maven dependency.
+#
+CDDL-1.0
+CDDL-1.1
+EPL-1.0
+EPL-2.0
+GPL-2.0-with-classpath-exception
+LGPL-2.1
+LGPL-3.0-only
+LGPL-3.0-or-later
+MPL-1.0
+MPL-1.1
+MPL-2.0
