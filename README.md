@@ -14,7 +14,7 @@ Add a maven profile to your `pom.xml`:
     <properties>
         <!-- licenses -->
         <license-maven-plugin.version>2.0.0</license-maven-plugin.version>
-        <dependency-license-exporter.version>0.1.0-SNAPSHOT</dependency-license-exporter.version>
+        <dependency-license-exporter.version>1.1.0</dependency-license-exporter.version>
     </properties>
 
     <!-- ... -->
