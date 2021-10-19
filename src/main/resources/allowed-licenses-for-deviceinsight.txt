@@ -12,6 +12,7 @@ BSD-3-Clause
 CC-BY-4.0
 EDL-1.0
 MIT
+The JSON License
 Unlicense
 #
 # Restricted licenses
