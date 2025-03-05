@@ -6,6 +6,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.1.3] - 2025-03-05
+### Changed
+- Name of allowed-licenses file
+- Added synonym for EPL-2.0 (Eclipse Public License - v 2.0)
+- Added new bouncy castle license overrides (still MIT license: https://www.bouncycastle.org/licence.html)
+
 ## [1.1.2] - 2021-04-08
 ### Changed
 - Updated override-licenses:
@@ -19,7 +25,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [1.1.0] - 2020-10-29
 ### Added
 - A default list of approved licenses for Device Insight projects at 
-    `src/main/resources/allowed-licenses-for-deviceinsight.txt`
+    `src/main/resources/allowed-licenses.txt`
 - A template for adoc with a human readable library names at 
     `src/main/resources/com/deviceinsight/license/exporter/adoc-template-with-human-readable-lib-names.ftl`
 

@@ -38,7 +38,7 @@ Add a maven profile to your `pom.xml`:
                             <useMissingFile>true</useMissingFile>
                             <licenseMergesUrl>classpath:license-merges.txt</licenseMergesUrl>
                             <overrideUrl>classpath:override-licenses.txt</overrideUrl>
-                            <includedLicenses>classpath:allowed-licenses-for-deviceinsight.txt</includedLicenses>
+                            <includedLicenses>classpath:allowed-licenses.txt</includedLicenses>
                             <useMissingFile>false</useMissingFile>
                             <excludeTransitiveDependencies>true</excludeTransitiveDependencies>
                             <includeTransitiveDependencies>false</includeTransitiveDependencies>

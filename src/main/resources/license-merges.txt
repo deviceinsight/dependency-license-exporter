@@ -15,7 +15,7 @@ CDDL-1.0|Common Development and Distribution License (CDDL), version 1.0| Common
 CDDL-1.1|(CDDL) Version 1.1|CDDL 1.1
 EDL-1.0|Eclipse Distribution License - v 1.0|Eclipse Distribution License v. 1.0|Eclipse Distribution License (EDL), Version 1.0
 EPL-1.0|EPL 1.0|Eclipse Public License 1.0|Eclipse Public License - v 1.0|Eclipse Public License (EPL), Version 1.0|Eclipse Public License, Version 1.0
-EPL-2.0|EPL 2.0|Eclipse Public License 2.0|Eclipse Public License v. 2.0|Eclipse Public License v2.0
+EPL-2.0|EPL 2.0|Eclipse Public License 2.0|Eclipse Public License v. 2.0|Eclipse Public License v2.0|Eclipse Public License - v 2.0
 GPL-2.0-with-classpath-exception|GPL2 w/ CPE|GNU General Public License, version 2 (GPL2), with the classpath exception|GNU General Public License, Version 2 with the Classpath Exception
 GPL-2.0|GPL 2.0|GNU General Public License, v2.0|GNU GENERAL PUBLIC LICENSE Version 2, June 1991|GNU General Public License, Version 2.0|GNU General Public License version 2 (GPLv2)
 GPL-3.0|GNU Public License, Version 3.0
