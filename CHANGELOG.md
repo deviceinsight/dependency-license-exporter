@@ -6,8 +6,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-## [Unreleased]
-
 ## [1.1.4] - 2025-03-05
 ### Changed
 - Added synonym for EPL-2.0 (Eclipse Public License - v 2.0)
