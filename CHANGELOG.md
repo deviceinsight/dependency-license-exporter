@@ -6,6 +6,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.1.4] - 2025-03-05
+### Changed
+- Added synonym for EPL-2.0 (Eclipse Public License - v 2.0)
+- Added new bouncy castle license overrides (still MIT license: https://www.bouncycastle.org/licence.html)
+
+## [1.1.3] - 2021-10-19
+
 ## [1.1.2] - 2021-04-08
 ### Changed
 - Updated override-licenses:
