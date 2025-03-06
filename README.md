@@ -181,16 +181,17 @@ Creating a new release involves the following steps:
 * `git push --tags`
 * `git push origin develop`
 
-In order to deploy the release to Maven Central, you need to create an account at https://issues.sonatype.org and
-configure your account in `~/.m2/settings.xml`:
+In order to deploy the release to Maven Central, you need to create an account at https://central.sonatype.com.
+
+Then, generate a login token at https://oss.sonatype.org at _Profile_ / _User Token_. Add this login token to the file `~/.m2/settings.xml`:
 
 ```xml
 <settings>
   <servers>
     <server>
       <id>ossrh</id>
-      <username>your-jira-id</username>
-      <password>your-jira-pwd</password>
+      <username>...token-username...</username>
+      <password>...token-password...</password>
     </server>
   </servers>
 </settings>
