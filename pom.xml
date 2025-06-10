@@ -6,7 +6,7 @@
 
 	<groupId>com.deviceinsight</groupId>
 	<artifactId>dependency-license-exporter</artifactId>
-	<version>1.1.4</version>
+	<version>1.1.5</version>
 	<packaging>jar</packaging>
 
 	<name>Dependency License Exporter</name>
@@ -19,8 +19,8 @@
 		<gitflow-maven-plugin.version>1.21.0</gitflow-maven-plugin.version>
 		<maven-source-plugin.version>3.3.1</maven-source-plugin.version>
 		<maven-javadoc-plugin.version>3.11.2</maven-javadoc-plugin.version>
-		<nexus-staging-maven-plugin.version>1.7.0</nexus-staging-maven-plugin.version>
 		<maven-gpg-plugin.version>3.2.7</maven-gpg-plugin.version>
+		<central-publishing-maven-plugin.version>0.7.0</central-publishing-maven-plugin.version>
 	</properties>
 
 
@@ -104,18 +104,6 @@
 							</execution>
 						</executions>
 					</plugin>
-					<!-- To release to Maven central -->
-					<plugin>
-						<groupId>org.sonatype.plugins</groupId>
-						<artifactId>nexus-staging-maven-plugin</artifactId>
-						<version>${nexus-staging-maven-plugin.version}</version>
-						<extensions>true</extensions>
-						<configuration>
-							<serverId>ossrh</serverId>
-							<nexusUrl>https://oss.sonatype.org/</nexusUrl>
-							<autoReleaseAfterClose>true</autoReleaseAfterClose>
-						</configuration>
-					</plugin>
 					<!-- To sign the artifacts -->
 					<plugin>
 						<groupId>org.apache.maven.plugins</groupId>
@@ -131,16 +119,17 @@
 							</execution>
 						</executions>
 					</plugin>
+					<plugin>
+						<groupId>org.sonatype.central</groupId>
+						<artifactId>central-publishing-maven-plugin</artifactId>
+						<version>${central-publishing-maven-plugin.version}</version>
+						<extensions>true</extensions>
+						<configuration>
+							<publishingServerId>central</publishingServerId>
+						</configuration>
+					</plugin>
 				</plugins>
 			</build>
-
-			<distributionManagement>
-				<snapshotRepository>
-					<id>ossrh</id>
-					<url>https://oss.sonatype.org/content/repositories/snapshots</url>
-				</snapshotRepository>
-			</distributionManagement>
-
 		</profile>
 	</profiles>
 </project>
