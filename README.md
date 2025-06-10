@@ -200,3 +200,6 @@ Then, generate a login token at https://oss.sonatype.org at _Profile_ / _User To
 The account also needs access to the project on Maven Central. This can be requested by another project member.
 
 Then check out the release you want to deploy (`git checkout x.y.z`) and run `mvn deploy -Prelease`.
+
+After uploading your artifact to Maven Central, you must visit [the deployments page](https://central.sonatype.com/publishing/deployments)
+to review and publish your deployment. The release will not be available until you complete this step.
