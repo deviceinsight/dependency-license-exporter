@@ -189,7 +189,7 @@ Then, generate a login token at https://oss.sonatype.org at _Profile_ / _User To
 <settings>
   <servers>
     <server>
-      <id>ossrh</id>
+      <id>central</id>
       <username>...token-username...</username>
       <password>...token-password...</password>
     </server>
